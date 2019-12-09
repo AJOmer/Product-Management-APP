@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+		img{
+			width: 250px;
+			height: 250px;
+		}
+	</style>
+</head>
+<body>
+<h1>Here are our Products!</h1>
+<div *ngFor = "let prod of product">
+	<img src={{prod.image}} alt="image of {{prod.title}}">
+	<h3>Product: {{prod.title}}</h3>
+	<h5>Price: {{prod.price}}</h5>
+	<a [routerLink] = "['/edit/',prod._id]">Edit</a> || <button (click) = "deleteProduct(prod._id)">Delete</button>
+</div>
+<a [routerLink] = "['/products/new']">Add New Product!</a>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add a Product</title>
+</head>
+<body>
+<div>
+	<h1>Add a Product!</h1>
+</div>
+<form (submit)="submitNew()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Product Title: </label>
+    <input type="text" class="form-control"  aria-describedby="emailHelp" name="newProduct.title" [(ngModel)] = "newProduct.title" placeholder="Enter product name">
+    <label for="exampleInputEmail1">Product Price: </label>
+    <input type="number" class="form-control"  aria-describedby="emailHelp" name="newProduct.price" [(ngModel)] = "newProduct.price" placeholder="Enter product price">
+    <label for="exampleInputEmail1">Product Image (Optional): </label>
+    <input type="text" class="form-control"  aria-describedby="emailHelp" name="newProduct.image" [(ngModel)] = "newProduct.image" placeholder="Enter picture of product">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div class="home">
+	<a [routerLink]="['/products']">Home</a>
+</div>
+</body>
+</html>
